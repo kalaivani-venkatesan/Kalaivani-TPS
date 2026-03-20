@@ -95,3 +95,165 @@ Review the given source code before starting the project:
 
 **Date:** 31/01/2026  
 **Time:** 06:42
+Here’s a **professional, repo-ready README.md** for your project 👇
+(just copy & paste into your GitHub)
+
+---
+
+# 📘 Transaction Processing System (C Language)
+
+## 🏦 Project Overview
+
+This project is a **Banking Transaction Processing System** developed using **C language**.
+It simulates real-world banking operations such as account creation, secure login, deposits, withdrawals, fund transfers, transaction history, and admin control.
+
+The system uses **file handling** to store and manage persistent data, making it behave like a basic database-driven banking application.
+
+---
+
+## 🎯 Key Features
+
+### 👤 User Features
+
+* Create new bank account
+* Secure login with PIN authentication
+* Deposit money
+* Withdraw money (with daily limit)
+* Transfer funds between accounts
+* Check account balance
+* View transaction history
+* Auto-generated transaction receipts
+
+---
+
+### 🔐 Security Features
+
+* PIN encryption (basic hashing)
+* Account lock after 3 failed login attempts
+* Prevention of invalid transactions
+* Input validation for all operations
+
+---
+
+### 🏛️ Admin Features
+
+* Admin login authentication
+* View all user accounts
+* Monitor balances
+
+---
+
+### 📂 Data Storage
+
+* `accounts.dat` → Stores account details
+* `transactions.dat` → Stores transaction logs
+* `receipts.txt` → Stores transaction receipts
+
+---
+
+## 🧱 Project Structure
+
+```
+📁 Transaction-Processing-System
+│
+├── main.c
+├── account.c
+├── transaction.c
+├── admin.c
+├── utils.c
+│
+├── account.h
+├── transaction.h
+├── admin.h
+├── utils.h
+│
+└── data/
+    ├── accounts.dat
+    ├── transactions.dat
+    └── receipts.txt
+```
+
+---
+
+## ⚙️ Compilation & Execution
+
+### 🔧 Compile
+
+```bash
+gcc main.c account.c transaction.c admin.c utils.c -o bank
+```
+
+### ▶️ Run
+
+```bash
+./bank
+```
+
+---
+
+## 🧪 Sample Flow
+
+```
+1. Create Account
+2. Login
+3. Deposit
+4. Withdraw
+5. Transfer
+6. View Balance
+7. Transaction History
+8. Logout
+```
+
+---
+
+## 🚀 Advanced Functionalities
+
+* Modular code structure (multi-file system)
+* File-based persistent storage
+* Transaction logging with timestamps
+* Daily withdrawal limit control
+* Receipt generation system
+* Clean and maintainable architecture
+
+---
+
+## ⚠️ Constraints
+
+* Works on **console (CLI only)**
+* No GUI interface
+* File-based storage (no SQL database)
+
+---
+
+## 💡 Future Enhancements
+
+* GUI using C++ / Java / Web
+* Database integration (MySQL)
+* OTP-based authentication
+* Interest calculation system
+* Loan management module
+
+---
+
+## 👨‍💻 Author
+
+**Kalaivani Venkatesan**
+
+---
+
+## 🏁 Conclusion
+
+This project demonstrates:
+
+* Strong understanding of **C programming**
+* Use of **file handling as database**
+* Implementation of **real-world banking logic**
+* Modular and scalable software design
+
+---
+
+
+
+---
+
+
