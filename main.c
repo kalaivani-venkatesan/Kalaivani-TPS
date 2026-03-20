@@ -4,18 +4,37 @@
 #include "transaction.h"
 #include "admin.h"
 
+void clearScreen() {
+    system("cls"); // use "clear" for Linux/Mac
+}
+
+void pauseScreen() {
+    printf("\nPress Enter to continue...");
+    getchar();
+    getchar();
+}
+
 int main() {
     int choice, accNo;
 
     while (1) {
-        printf("\n====== BANK SYSTEM ======\n");
-        printf("1. Create Account\n2. Login\n3. Admin Panel\n4. Exit\n");
-        printf("Choice: ");
+        clearScreen();
+
+        printf("\n====================================\n");
+        printf("        BANKING SYSTEM\n");
+        printf("====================================\n");
+        printf("1. Create Account\n");
+        printf("2. Login\n");
+        printf("3. Admin Panel\n");
+        printf("4. Exit\n");
+        printf("------------------------------------\n");
+        printf("Enter Choice: ");
         scanf("%d", &choice);
 
         switch (choice) {
             case 1:
                 createAccount();
+                pauseScreen();
                 break;
 
             case 2:
@@ -23,7 +42,16 @@ int main() {
                 if (accNo != -1) {
                     int ch;
                     do {
-                        printf("\n1.Deposit 2.Withdraw 3.Transfer 4.Balance 5.History 6.Logout\n");
+                        clearScreen();
+                        printf("\n====== USER DASHBOARD ======\n");
+                        printf("1. Deposit\n");
+                        printf("2. Withdraw\n");
+                        printf("3. Transfer\n");
+                        printf("4. Check Balance\n");
+                        printf("5. Transaction History\n");
+                        printf("6. Logout\n");
+                        printf("---------------------------\n");
+                        printf("Enter Choice: ");
                         scanf("%d", &ch);
 
                         switch (ch) {
@@ -33,6 +61,9 @@ int main() {
                             case 4: showBalance(accNo); break;
                             case 5: showTransactions(accNo); break;
                         }
+
+                        if (ch != 6) pauseScreen();
+
                     } while (ch != 6);
                 }
                 break;
@@ -42,10 +73,12 @@ int main() {
                 break;
 
             case 4:
+                printf("\nThank you for using our banking system!\n");
                 exit(0);
 
             default:
                 printf("Invalid choice!\n");
+                pauseScreen();
         }
     }
 }

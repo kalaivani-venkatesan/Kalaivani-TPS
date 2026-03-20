@@ -1,28 +1,37 @@
 #include <stdio.h>
 #include "admin.h"
-#include "account.h"
 
-#define FILE_NAME "data/accounts.dat"
 #define ADMIN_PASS 1234
 
 void adminPanel() {
-    int pass;
-    printf("Admin Password: ");
+    int pass, choice;
+
+    printf("\n--- Admin Login ---\n");
+    printf("Enter Password: ");
     scanf("%d", &pass);
 
     if (pass != ADMIN_PASS) {
-        printf("Access Denied!\n");
+        printf("❌ Access Denied!\n");
         return;
     }
 
-    FILE *fp = fopen(FILE_NAME, "rb");
-    struct Account acc;
+    do {
+        printf("\n========== ADMIN PANEL ==========\n");
+        printf("1. Export Accounts\n");
+        printf("2. Update Account\n");
+        printf("3. Add Account\n");
+        printf("4. Delete Account\n");
+        printf("5. Edit Account\n");
+        printf("6. Search Account\n");
+        printf("7. List Accounts\n");
+        printf("8. Statistics\n");
+        printf("9. Search by Name\n");
+        printf("11. Exit\n");
+        printf("=================================\n");
+        printf("Choice: ");
+        scanf("%d", &choice);
 
-    printf("\n--- All Accounts ---\n");
+        // (Call previously given functions here)
 
-    while (fread(&acc, sizeof(acc), 1, fp)) {
-        printf("%d | %s | %.2lf\n", acc.accNo, acc.name, acc.balance);
-    }
-
-    fclose(fp);
+    } while (choice != 11);
 }
